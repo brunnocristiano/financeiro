@@ -1,0 +1,323 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+:root {
+    --white: #fff;
+    --background: #e0e0e0;
+    --gray: #333333;
+    --light: #c4c4c4;
+    --black: #000;
+    --border: #979797;
+    --placeholder: #888888;
+    --validation: red; 
+}
+/* HEADER */
+#header-container {
+    width: 100%;
+    background-color: var(--background);
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 95%;
+    height: 80px;
+    margin: auto;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.app-title {
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.5em;
+    color: var(--gray);
+    padding-left: 10px;
+}
+.menu-mobile {
+    display: none;
+}
+/* NAV */
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--white);
+}
+nav a, 
+span {
+    padding: 8px;
+    text-decoration: none;
+    color: var(--gray);
+    transition: background-color 0.2s
+}
+nav a:hover {
+    font-weight: bold;
+    background-color: var(--light);
+}
+/* SECTION */
+#content {
+    display: flex;
+    max-width: 1100px;
+    margin: auto;
+    width: 95%;
+}
+/* FORM */
+#form-container {
+    display: flex;
+    width: 40%;
+}
+form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-top: 30px;
+}
+.transaction-title {
+    text-align: center;
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1.375em;
+    color: var(--black);
+    position: relative;
+    top: 15px;
+    margin-bottom: 20px;
+}
+.input-containers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+}
+.label-input {
+    color: var(--gray);
+    font-size: 0.875em;
+    line-height: 1.375em;
+    margin-bottom: 5px; 
+}
+#transaction-type, 
+#item-name, 
+#product-price {
+    color: var(--gray);
+    font-size: 0.875em;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding-left: 5px;
+}
+select#transaction-type {
+    color: var(--placeholder);
+}
+#btn-transaction {
+    background: var(--gray);
+    color: var(--white);
+    line-height: 1.375em;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    transition: background-color 0.4s;
+    cursor: pointer;
+}
+#btn-transaction:hover {
+    background: var(--light);
+    color: var(--gray);
+    font-weight: 700;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.08)
+}
+/* TABLE */
+#table-container {
+    display: flex;
+    width: 70%;
+    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+table {
+    width: 96%;
+    align-self: flex-end;
+}
+table,
+th,
+td {
+    border-bottom: 1px solid var(--border);
+    border-collapse: collapse;
+}
+.table-title {
+    font-size: 1.125em;
+    line-height: 1.125em;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+tr {
+    height: 30px;
+}
+td {
+    padding: 10px 0;
+}
+.th-align-left {
+    text-align: left;
+}
+.element-align-end {
+    text-align: end;
+}
+.tr-last {
+    border-bottom: hidden;
+    border-top: double;
+}
+tr:hover {background-color: var(--background);}
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: var(--gray);
+    height: 30px;
+    position: fixed;
+    top: 99%;
+}
+/*** IPAD PORTRAIT ***/
+@media only screen and (max-width: 768px) {
+    header {
+        width: 90%;
+    }
+    .nav-container {
+    display: none;
+    }
+    .logo-container{
+        width: 97%;
+    }
+    .app-title {
+        text-align: center;
+        width: 100%;
+    }
+    .menu-mobile {
+        display: initial;
+        cursor: pointer;
+    }
+    #menu-mobile-wrapper {
+        width: 35%;
+        height: 100%;
+        background-color: var(--gray);
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+    .nav-mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .nav-mobile a,
+    #btn-close-menu {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    .nav-mobile a {
+        padding: 10px 20px;
+        transition: background-color 0.4s;
+    }
+    a {
+        width: 100%;
+        text-align: right;
+    }
+    .nav-mobile a:hover {
+        background-color: var(--light);
+        color: var(--gray);
+        cursor: pointer;
+    }
+    #btn-close-menu {
+        font-weight: bold;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 1.1em;
+        cursor: pointer;
+    }
+    #content {
+        width: 90%;
+        flex-direction: column;
+    }
+    #form-container {
+        width: 100%;
+    }
+    form {
+        flex-flow: row wrap;
+    }
+    .transaction-title {
+        width: 100%;
+        margin-bottom: 30px;
+        height: fit-content;
+        top: 20px;
+    }
+    .input-containers {
+        height: fit-content;
+        padding: 0;
+    }
+    .tablet-select {
+        width: 20%;
+        margin-left: 0.5vw;
+    }
+    .tablet-item {
+        width: 50%;
+    }
+    .tablet-price {
+        width: 20%;
+        margin-right: 0.5vw;
+        margin-bottom: 15px;
+    }
+    #table-container {
+        width: 100%;
+    }
+    table {
+        width: 100%;
+    }
+    #btn-transaction {
+        width: 150%;
+        align-self: flex-end;
+    }
+}
+/* SMARTPHONE */
+@media only screen and (max-width: 600px) {
+    .transaction-title {
+        display: none;
+    }
+    #menu-mobile-wrapper {
+        width: 75%;
+    }
+    form {
+        flex-flow: column wrap;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-radius: 0;
+    }
+    .tablet-select, 
+    .tablet-item, 
+    .tablet-price,
+    #btn-transaction {
+        width: 100%;
+    }
+    .tablet-select {
+        margin: 0;
+    }
+    .input-containers {
+        margin-bottom: 20px;
+    }
+    #table-container {
+        margin-top: 35px;
+    }
+}
